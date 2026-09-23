@@ -54,9 +54,9 @@ const barColors = ['bg-sun', 'bg-signal', 'bg-pool'];
 
 function Subsection({ index, title, caption, children }) {
     return (
-        <div className="grid gap-8 border-t border-ink/10 py-12 md:grid-cols-[220px_1fr] md:gap-14">
+        <div className="grid gap-6 border-t border-ink/10 py-8 sm:gap-8 sm:py-12 md:grid-cols-[220px_1fr] md:gap-14">
             <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">{index}</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">{index}</p>
                 <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-ink">{title}</h3>
                 {caption && <p className="mt-2 text-sm leading-relaxed text-ink/60">{caption}</p>}
             </div>
@@ -68,12 +68,12 @@ function Subsection({ index, title, caption, children }) {
 export default function ResumeSection() {
     return (
         <section id="resume" className="scroll-mt-16">
-            <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+            <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
                 <Reveal>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                         01 — Resume
                     </p>
-                    <h2 className="mt-3 max-w-2xl font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
+                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
                         Nearly 8 years building Android SDKs
                     </h2>
                 </Reveal>
@@ -89,7 +89,7 @@ export default function ResumeSection() {
                                 {experience.map((job) => (
                                     <article
                                         key={job.role}
-                                        className="grid gap-2 py-7 first:pt-0 last:pb-0 sm:grid-cols-[170px_1fr] sm:gap-6"
+                                        className="grid gap-2 py-7 first:pt-0 last:pb-0 lg:grid-cols-[170px_1fr] lg:gap-6"
                                     >
                                         <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50 sm:pt-1.5">
                                             {job.period}
@@ -115,7 +115,7 @@ export default function ResumeSection() {
                                 {education.map((entry) => (
                                     <article
                                         key={entry.degree}
-                                        className="grid gap-2 py-7 first:pt-0 last:pb-0 sm:grid-cols-[170px_1fr] sm:gap-6"
+                                        className="grid gap-2 py-7 first:pt-0 last:pb-0 lg:grid-cols-[170px_1fr] lg:gap-6"
                                     >
                                         <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50 sm:pt-1.5">
                                             {entry.period}
@@ -137,7 +137,7 @@ export default function ResumeSection() {
                             title="What I bring"
                             caption="A technical toolkit built on real-world SDK engineering and platform challenges."
                         >
-                            <div className="grid gap-x-12 gap-y-7 sm:grid-cols-2">
+                            <div className="grid gap-x-12 gap-y-7 lg:grid-cols-2">
                                 {skills.map((skill, i) => (
                                     <div key={skill.name}>
                                         <div className="flex items-baseline justify-between gap-4">

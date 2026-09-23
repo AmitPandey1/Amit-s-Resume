@@ -43,13 +43,13 @@ const item = {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[calc(100dvh-84px)] items-center">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 py-16 lg:grid-cols-2 lg:gap-10 lg:px-10">
+    <section id="top" className="relative flex items-center lg:min-h-[calc(100dvh-84px)]">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-5 py-8 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-10 lg:px-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto w-full max-w-sm lg:max-w-md"
+          className="mx-auto w-full max-w-[220px] sm:max-w-sm lg:max-w-md"
         >
           <CornerFrame>
             <div className="overflow-hidden rounded-full">
@@ -62,36 +62,35 @@ export default function Hero() {
               />
             </div>
           </CornerFrame>
-          <p className="mt-7 text-center font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+          <p className="mt-5 text-center font-mono text-[10px] leading-relaxed uppercase tracking-[0.12em] sm:mt-7 sm:text-[11px] sm:tracking-[0.25em] text-ink/50">
             Fig. 01 — Amit Pandey, Android Developer, Noida
           </p>
         </motion.div>
 
-        <motion.div variants={container} initial="hidden" animate="show" className="text-center lg:text-left">
-          <motion.p variants={item} className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50 mb-4">
+        <motion.div variants={container} initial="hidden" animate="show" className="min-w-0 text-left">
+          <motion.p variants={item} className="font-mono text-[11px] uppercase tracking-[0.12em] leading-relaxed text-ink/50 mb-3 sm:tracking-[0.25em] sm:mb-4">
             Senior Android Developer · 8 Years Experience
           </motion.p>
           <motion.h1
             variants={item}
-            className="font-display font-extrabold leading-none tracking-tight text-ink"
-            style={{ fontSize: '72px', lineHeight: '1.05' }}
+            className="font-display text-[clamp(2.75rem,12vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-ink"
           >
             Amit<br />Pandey
           </motion.h1>
-          <motion.h2 variants={item} className="mt-5 font-display text-xl font-bold tracking-tight text-ink/80">
+          <motion.h2 variants={item} className="mt-4 font-display text-lg sm:mt-5 sm:text-xl font-bold tracking-tight text-ink/80">
             Android SDK &amp; Mobile Platform Engineer
           </motion.h2>
-          <motion.p variants={item} className="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink/70 lg:mx-0">
+          <motion.p variants={item} className="mt-3 max-w-md text-sm sm:mt-4 sm:text-base leading-relaxed text-ink/70 lg:mx-0">
             Building robust mobile SDKs and platform solutions — push notifications, in-app messaging, geofencing, and cross-platform integrations — for nearly 8 years at Semusi.
           </motion.p>
-          <motion.div variants={item} className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:justify-start">
+          <motion.div variants={item} className="mt-6 grid grid-cols-3 gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-6">
             {circleLinks.map(link => (
               <motion.a
                 key={link.href}
                 href={link.href}
                 whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.97 }}
-                className={`flex h-28 w-28 items-center justify-center rounded-full font-display text-base font-bold shadow-sm transition-shadow duration-300 hover:shadow-xl sm:h-32 sm:w-32 lg:h-36 lg:w-36 ${link.className}`}
+                className={`flex aspect-square w-full min-w-0 items-center justify-center rounded-full font-display text-sm sm:text-base font-bold shadow-sm transition-shadow duration-300 hover:shadow-xl sm:h-32 sm:w-32 lg:h-36 lg:w-36 ${link.className}`}
               >
                 {link.label}
               </motion.a>

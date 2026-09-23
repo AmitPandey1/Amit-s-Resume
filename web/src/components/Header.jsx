@@ -9,7 +9,7 @@ const navItems = [
 export default function Header() {
     return (
         <header className="w-full">
-            <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 py-5 md:flex-row md:justify-between md:py-6 lg:px-10">
+            <div className="mx-auto flex max-w-7xl flex-col items-start gap-2 px-5 py-4 sm:px-6 md:flex-row md:items-center md:justify-between md:py-6 lg:px-10">
                 <a href="#top" className="flex items-start gap-2.5 md:items-baseline" aria-label="Amit Pandey — back to top">
                     <span aria-hidden="true" className="mt-2 inline-block h-3 w-3 shrink-0 rounded-full bg-sun md:mt-0 md:translate-y-[1px]" />
                     <span className="flex flex-col gap-0.5 md:flex-row md:items-baseline md:gap-2.5">

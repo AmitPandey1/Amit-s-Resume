@@ -10,7 +10,7 @@ const socials = [
 export default function Footer() {
     return (
         <footer className="border-t border-ink/10">
-            <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
+            <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:gap-10 sm:px-6 sm:py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
                 <div>
                     <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Phone</p>
                     <a

@@ -16,7 +16,7 @@ const socials = [
 ];
 
 const inputClass =
-    'w-full rounded-lg border border-ink/20 bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink/40 transition-colors focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink';
+    'w-full rounded-lg border border-ink/20 bg-transparent px-4 py-3 text-base text-ink sm:text-sm placeholder:text-ink/40 transition-colors focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink';
 
 export default function ContactSection() {
     const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -48,20 +48,20 @@ export default function ContactSection() {
 
     return (
         <section id="contact" className="scroll-mt-16 border-t border-ink/10">
-            <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+            <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
                 <Reveal>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                         03 — Contact
                     </p>
-                    <h2 className="mt-3 max-w-2xl font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
+                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
                         Let's work together
                     </h2>
                 </Reveal>
 
-                <div className="mt-14 grid gap-14 lg:grid-cols-[1fr_360px] lg:gap-20">
+                <div className="mt-8 grid gap-10 sm:mt-14 sm:gap-14 lg:grid-cols-[1fr_360px] lg:gap-20">
                     <Reveal>
                         {sent ? (
-                            <div className="flex h-full min-h-[320px] flex-col items-start justify-center rounded-lg border border-ink/15 p-10">
+                            <div className="flex h-full min-h-[320px] flex-col items-start justify-center rounded-lg border border-ink/15 p-5 sm:p-10">
                                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-pool">
                                     <Check className="h-6 w-6 text-ink" strokeWidth={2.5} />
                                 </span>
@@ -83,7 +83,7 @@ export default function ContactSection() {
                             <form onSubmit={handleSubmit} noValidate className="space-y-6">
                                 <div className="grid gap-6 sm:grid-cols-2">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="contact-name" className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/60">
+                                        <label htmlFor="contact-name" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
                                             Name
                                         </label>
                                         <input
@@ -97,7 +97,7 @@ export default function ContactSection() {
                                         {errors.name && <p className="text-xs text-signal">{errors.name}</p>}
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="contact-email" className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/60">
+                                        <label htmlFor="contact-email" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
                                             Email
                                         </label>
                                         <input
@@ -112,7 +112,7 @@ export default function ContactSection() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="contact-message" className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/60">
+                                    <label htmlFor="contact-message" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
                                         Message
                                     </label>
                                     <textarea
@@ -148,7 +148,7 @@ export default function ContactSection() {
                             <div className="space-y-6">
                                 {details.map((item) => (
                                     <div key={item.label}>
-                                        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                             {item.label}
                                         </p>
                                         {item.href ? (
@@ -181,7 +181,7 @@ export default function ContactSection() {
                             </div>
 
                             <div>
-                                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                     Find me online
                                 </p>
                                 <div className="mt-3 flex items-center gap-3">

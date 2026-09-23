@@ -130,14 +130,14 @@ export default function ProjectsSection() {
 
     return (
         <section id="projects" className="scroll-mt-16 border-t border-ink/10">
-            <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+            <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
 
                 {/* Header */}
                 <Reveal>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                         02 — Projects
                     </p>
-                    <h2 className="mt-3 max-w-2xl font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
+                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
                         Selected work
                     </h2>
                     <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">
@@ -147,16 +147,16 @@ export default function ProjectsSection() {
                 </Reveal>
 
                 {/* ── Featured Work Project ─────────────────────────────── */}
-                <Reveal className="mt-16">
-                    <article className="grid items-start gap-10 rounded-2xl border border-ink/10 p-8 md:grid-cols-2 md:gap-16 lg:p-12">
+                <Reveal className="mt-8 sm:mt-16">
+                    <article className="grid items-start gap-6 rounded-2xl border border-ink/10 p-4 sm:gap-10 sm:p-8 md:grid-cols-2 md:gap-16 lg:p-12">
                         <div>
-                            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                 {featuredWork.index} — {featuredWork.year}
                             </p>
-                            <h3 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+                            <h3 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-ink sm:text-4xl">
                                 {featuredWork.title}
                             </h3>
-                            <p className="mt-4 max-w-md text-base leading-relaxed text-ink/70">
+                            <p className="mt-4 max-w-md text-sm sm:text-base leading-relaxed text-ink/70">
                                 {featuredWork.description}
                             </p>
                             <div className="mt-5 flex flex-wrap gap-2">
@@ -166,18 +166,18 @@ export default function ProjectsSection() {
                                     </span>
                                 ))}
                             </div>
-                            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-ink/10 pt-8">
-                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Role</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.role}</dd></div>
-                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Platform</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.platform}</dd></div>
-                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Period</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.year}</dd></div>
-                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Highlight</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.metric}</dd></div>
+                            <dl className="mt-8 grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-5 border-t border-ink/10 pt-8">
+                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">Role</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.role}</dd></div>
+                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">Platform</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.platform}</dd></div>
+                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">Period</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.year}</dd></div>
+                                <div><dt className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">Highlight</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.metric}</dd></div>
                             </dl>
                         </div>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid min-w-0 grid-cols-2 gap-2 sm:gap-3">
                             {featuredWork.features.map(({ icon, label }) => (
-                                <div key={label} className="flex items-center gap-3 rounded-xl border border-ink/10 p-4">
-                                    <span className="text-2xl">{icon}</span>
-                                    <span className="text-xs font-medium text-ink/70 leading-tight">{label}</span>
+                                <div key={label} className="flex min-w-0 flex-col items-start gap-2 rounded-xl border border-ink/10 p-3 sm:flex-row sm:items-center sm:gap-3 sm:p-4 md:flex-col md:items-start xl:flex-row xl:items-center">
+                                    <span className="shrink-0 text-2xl">{icon}</span>
+                                    <span className="min-w-0 break-words text-sm font-medium text-ink/70 leading-snug">{label}</span>
                                 </div>
                             ))}
                         </div>
@@ -188,8 +188,8 @@ export default function ProjectsSection() {
                 <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {restWork.map((project, i) => (
                         <Reveal key={project.title} delay={i * 0.07}>
-                            <article className="group h-full rounded-2xl border border-ink/10 p-6 transition-shadow duration-300 hover:shadow-lg">
-                                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                            <article className="group h-full rounded-2xl border border-ink/10 p-5 sm:p-6 transition-shadow duration-300 hover:shadow-lg">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                     {project.index} — {project.year}
                                 </p>
                                 <h3 className="mt-1.5 font-display text-lg font-bold tracking-tight text-ink">
@@ -215,10 +215,10 @@ export default function ProjectsSection() {
                 {/* ── Personal / Live Apps ──────────────────────────────── */}
                 <Reveal>
                     <div className="mt-20 border-t border-ink/10 pt-14">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                             02.2 — Personal Projects
                         </p>
-                        <h3 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+                        <h3 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-ink sm:text-4xl">
                             Live on Play Store
                         </h3>
                         <p className="mt-3 max-w-lg text-base leading-relaxed text-ink/70">
@@ -230,7 +230,7 @@ export default function ProjectsSection() {
                 <div className="mt-8 grid gap-6 sm:grid-cols-2">
                     {personalProjects.map((project, i) => (
                         <Reveal key={project.title} delay={i * 0.1}>
-                            <article className="group relative h-full rounded-2xl border border-ink/10 p-8 transition-all duration-300 hover:border-ink/30 hover:shadow-xl">
+                            <article className="group relative h-full rounded-2xl border border-ink/10 p-5 sm:p-8 transition-all duration-300 hover:border-ink/30 hover:shadow-xl">
                                 {/* Live badge */}
                                 <span className="absolute right-6 top-6 flex items-center gap-1.5 rounded-full bg-sun/20 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-ink/70">
                                     <span className="h-1.5 w-1.5 rounded-full bg-sun animate-pulse" />
@@ -238,7 +238,7 @@ export default function ProjectsSection() {
                                 </span>
 
                                 <div className="text-4xl mb-4">{project.icon}</div>
-                                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                     {project.index} — Personal
                                 </p>
                                 <h3 className="mt-1.5 font-display text-2xl font-bold tracking-tight text-ink">
@@ -259,7 +259,7 @@ export default function ProjectsSection() {
                                     href={project.playStoreUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-2 font-mono text-xs uppercase tracking-[0.15em] text-ink/70 transition-all duration-200 hover:border-ink hover:bg-ink hover:text-paper"
+                                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-ink/20 px-4 py-3 font-mono text-xs uppercase tracking-[0.08em] sm:tracking-[0.15em] text-ink/70 transition-all duration-200 hover:border-ink hover:bg-ink hover:text-paper"
                                 >
                                     <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M3.18 23.76c.35.2.74.24 1.12.14l12.54-12.54-3.54-3.54L3.18 23.76zM20.8 10.6L17.86 9 3.16.24C2.9.08 2.6 0 2.3 0c-.16 0-.33.03-.48.08L14.3 12.36 20.8 10.6zM22.4 11.45l-1.6-.96-1.86.5-3.7 10.1c.08.28.08.58 0 .88.29-.04.56-.17.78-.38l6.38-10.14zM2.3 24c.3 0 .6-.08.86-.24l.02-.01L13.3 13.64 9.76 10.1 2.3 24z"/>
