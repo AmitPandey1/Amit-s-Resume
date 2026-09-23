@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Linkedin, Github, Mail } from 'lucide-react';
+import { Check, Linkedin, Github, Mail, UserPlus } from 'lucide-react';
 import Reveal from './Reveal';
 
 const details = [
@@ -163,6 +163,21 @@ export default function ContactSection() {
                                         )}
                                     </div>
                                 ))}
+                            </div>
+
+                            <div>
+                                <a
+                                    href="/amit-pandey.vcf"
+                                    download="Amit-Pandey.vcf"
+                                    aria-describedby="save-contact-help"
+                                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-semibold text-paper transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                                >
+                                    <UserPlus className="h-4 w-4" aria-hidden="true" />
+                                    Save to contacts
+                                </a>
+                                <p id="save-contact-help" className="mt-3 text-xs leading-relaxed text-ink/60">
+                                    Save my name, phone, email, and address. Open the downloaded contact file and choose Save or Import in your contacts app.
+                                </p>
                             </div>
 
                             <div>
