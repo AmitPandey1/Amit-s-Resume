@@ -30,7 +30,7 @@ const education = [
         period: '2012 — 2015',
         degree: 'Bachelor of Computer Applications (BCA)',
         school: 'Deen Dayal Upadhyay Gorakhpur University',
-        summary: '73% — Top 10 in Class. Foundation in Computer Science.',
+        summary: '73% — Foundation in Computer Science.',
     },
 ];
 
