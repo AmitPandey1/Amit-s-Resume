@@ -1,39 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CornerFrame from './CornerFrame';
-
-const PORTRAIT_URL = '/amit.jpg';
-
-const circleLinks = [
-  {
-    label: 'Resume',
-    href: '#resume',
-    className: 'bg-[#1a3a5c] !text-white'
-  },
-  {
-    label: 'Projects',
-    href: '#projects',
-    className: 'bg-[#0f766e] !text-white'
-  },
-  {
-    label: "Let's talk",
-    href: '#contact',
-    className: 'bg-[#111111] !text-white'
-  }
-];
+import { Smartphone, Download, Github, Linkedin, Mail } from 'lucide-react';
+import PhoneMockup from './PhoneMockup';
+import CountUp from './CountUp';
 
 const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
       delayChildren: 0.15
     }
   }
 };
 
 const item = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
@@ -41,61 +23,135 @@ const item = {
   }
 };
 
+const techBadges = ['Kotlin', 'Java', 'Jetpack Compose', 'FCM', 'REST APIs', 'MVVM', 'Room'];
+
+const stats = [
+  { value: 8, suffix: '+', label: 'Years of Android' },
+  { value: 4, suffix: '', label: 'Platforms supported' },
+  { value: 2, suffix: '', label: 'Apps on Play Store' }
+];
+
 export default function Hero() {
   return (
-    <section id="top" className="relative flex items-center lg:min-h-[calc(100dvh-84px)]">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-5 py-8 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-10 lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto w-full max-w-[220px] sm:max-w-sm lg:max-w-md"
-        >
-          <CornerFrame>
-            <div className="overflow-hidden rounded-full">
-              <img
-                src={PORTRAIT_URL}
-                alt="Portrait of Amit Pandey, Senior Android Developer"
-                width={480}
-                height={480}
-                className="aspect-square w-full object-cover object-top"
-              />
-            </div>
-          </CornerFrame>
-          <p className="mt-5 text-center font-mono text-[10px] leading-relaxed uppercase tracking-[0.12em] sm:mt-7 sm:text-[11px] sm:tracking-[0.25em] text-ink/50">
-            Fig. 01 — Amit Pandey, Android Developer, Noida
-          </p>
-        </motion.div>
+    <section id="top" className="relative overflow-hidden bg-ink text-paper">
+      {/* subtle grid background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+          backgroundSize: '44px 44px'
+        }}
+      />
+      {/* android-green accent glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 top-1/3 h-96 w-96 rounded-full bg-android/20 blur-3xl"
+      />
 
-        <motion.div variants={container} initial="hidden" animate="show" className="min-w-0 text-left">
-          <motion.p variants={item} className="font-mono text-[11px] uppercase tracking-[0.12em] leading-relaxed text-ink/50 mb-3 sm:tracking-[0.25em] sm:mb-4">
-            Senior Android Developer · 8 Years Experience
-          </motion.p>
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:px-10 lg:py-28">
+        <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
+          <motion.div
+            variants={item}
+            className="inline-flex items-center gap-2 rounded-full border border-android/40 bg-android/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-android"
+          >
+            <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
+            Senior Android &amp; Mobile SDK Developer
+          </motion.div>
+
           <motion.h1
             variants={item}
-            className="font-display text-[clamp(2.75rem,12vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-ink"
+            className="mt-6 font-display text-[clamp(2.75rem,10vw,5rem)] font-extrabold leading-[1.02] tracking-tight"
           >
-            Amit<br />Pandey
+            Hi, I&apos;m <span className="text-android">Amit Pandey</span>.
+            <br />
+            I build what ships
+            <br />
+            on 3 billion phones.
           </motion.h1>
-          <motion.h2 variants={item} className="mt-4 font-display text-lg sm:mt-5 sm:text-xl font-bold tracking-tight text-ink/80">
-            Android SDK &amp; Mobile Platform Engineer
-          </motion.h2>
-          <motion.p variants={item} className="mt-3 max-w-md text-sm sm:mt-4 sm:text-base leading-relaxed text-ink/70 lg:mx-0">
-            Building robust mobile SDKs and platform solutions — push notifications, in-app messaging, geofencing, and cross-platform integrations — for nearly 8 years at Semusi.
+
+          <motion.p variants={item} className="mt-6 max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+            Nearly 8 years engineering the{' '}
+            <strong className="font-semibold text-white">AppICE Android SDK</strong> — push
+            notifications, in-app messaging, geofencing and cross-platform bridges for React
+            Native, Flutter, Cordova and Kony — plus apps live on the Google Play Store.
           </motion.p>
-          <motion.div variants={item} className="mt-6 grid grid-cols-3 gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-6">
-            {circleLinks.map(link => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.97 }}
-                className={`flex aspect-square w-full min-w-0 items-center justify-center rounded-full font-display text-sm sm:text-base font-bold shadow-sm transition-shadow duration-300 hover:shadow-xl sm:h-32 sm:w-32 lg:h-36 lg:w-36 ${link.className}`}
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
+            <motion.a
+              href="#resume"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 rounded-full bg-android px-6 py-3.5 font-display text-sm font-bold text-ink shadow-lg shadow-android/20 transition-shadow hover:shadow-xl hover:shadow-android/30"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              View my work
+            </motion.a>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-display text-sm font-bold text-white transition-colors hover:border-android hover:text-android"
+            >
+              Let&apos;s talk
+            </motion.a>
+            <div className="flex items-center gap-2">
+              {[
+                { label: 'GitHub', href: 'https://github.com/AmitPandey1', Icon: Github },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amit-pandey-8a91b4140', Icon: Linkedin },
+                { label: 'Email', href: 'mailto:ap78700@gmail.com', Icon: Mail }
+              ].map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-zinc-300 transition-colors hover:border-android hover:text-android"
+                >
+                  <Icon className="h-4 w-4" strokeWidth={1.8} />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap gap-2">
+            {techBadges.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-md border border-white/10 bg-white/5 px-3 py-1 font-mono text-[11px] text-zinc-300"
               >
-                {link.label}
-              </motion.a>
+                {tech}
+              </span>
             ))}
           </motion.div>
+
+          <motion.dl
+            variants={item}
+            className="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-8"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-display text-3xl font-extrabold text-white">
+                  <CountUp value={stat.value} suffix={stat.suffix} locale="en-US" />
+                </dd>
+                <dd className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="lg:justify-self-end"
+        >
+          <PhoneMockup />
         </motion.div>
       </div>
     </section>

@@ -9,28 +9,28 @@ const socials = [
 
 export default function Footer() {
     return (
-        <footer className="border-t border-ink/10">
+        <footer className="bg-ink text-paper">
             <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:gap-10 sm:px-6 sm:py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Phone</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">Phone</p>
                     <a
                         href="tel:+917379363416"
-                        className="mt-2 block text-sm text-ink/80 transition-colors hover:text-ink"
+                        className="mt-2 block text-sm text-zinc-300 transition-colors hover:text-android"
                     >
                         +91 7379363416
                     </a>
                 </div>
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">Email</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">Email</p>
                     <a
                         href="mailto:ap78700@gmail.com"
-                        className="mt-2 block text-sm text-ink/80 transition-colors hover:text-ink"
+                        className="mt-2 block text-sm text-zinc-300 transition-colors hover:text-android"
                     >
                         ap78700@gmail.com
                     </a>
                 </div>
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">
                         Find me online
                     </p>
                     <div className="mt-2 flex items-center gap-2">
@@ -41,7 +41,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label={label}
-                                className="flex h-9 w-9 items-center justify-center rounded-full text-ink/70 transition-colors hover:bg-ink hover:text-paper"
+                                className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-300 ring-1 ring-white/15 transition-colors hover:bg-android hover:text-ink"
                             >
                                 <Icon className="h-4 w-4" strokeWidth={1.8} />
                             </a>
@@ -49,8 +49,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="lg:text-right">
-                    <p className="text-sm text-ink/60">© 2025 Amit Pandey. All rights reserved.</p>
-                    <p className="mt-1 text-sm text-ink/60">Senior Android Developer · Noida, India.</p>
+                    <p className="text-sm text-zinc-400">© 2026 Amit Pandey. All rights reserved.</p>
+                    <p className="mt-1 text-sm text-zinc-400">Senior Android Developer · Noida, India.</p>
                 </div>
             </div>
         </footer>

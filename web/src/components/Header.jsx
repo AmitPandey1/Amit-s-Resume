@@ -1,35 +1,55 @@
 import React from 'react';
 
-const navItems = [
-    { label: 'Resume', href: '#resume' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
-];
+// Android-green + sky-blue accents for the mobile-dev theme.
+const androidRobot = (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 text-android">
+        <path
+            fill="currentColor"
+            d="M17.6 9.48l1.84-3.18a.3.3 0 0 0-.11-.42.3.3 0 0 0-.41.11l-1.87 3.24a11.5 11.5 0 0 0-10.1 0L5.08 6a.3.3 0 0 0-.41-.11.3.3 0 0 0-.11.42L6.4 9.48A10.8 10.8 0 0 0 1 17.5h22a10.8 10.8 0 0 0-5.4-8.02zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"
+        />
+    </svg>
+);
 
 export default function Header() {
     return (
-        <header className="w-full">
-            <div className="mx-auto flex max-w-7xl flex-col items-start gap-2 px-5 py-4 sm:px-6 md:flex-row md:items-center md:justify-between md:py-6 lg:px-10">
-                <a href="#top" className="flex items-start gap-2.5 md:items-baseline" aria-label="Amit Pandey — back to top">
-                    <span aria-hidden="true" className="mt-2 inline-block h-3 w-3 shrink-0 rounded-full bg-sun md:mt-0 md:translate-y-[1px]" />
-                    <span className="flex flex-col gap-0.5 md:flex-row md:items-baseline md:gap-2.5">
-                        <span className="whitespace-nowrap font-display text-lg font-bold tracking-tight text-ink">Amit Pandey</span>
-                        <span className="whitespace-nowrap text-sm text-ink/60">Android Developer</span>
+        <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/90 backdrop-blur">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-10">
+                <a href="#top" className="flex items-center gap-2.5" aria-label="Amit Pandey — back to top">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-android/10 ring-1 ring-android/40">
+                        {androidRobot}
+                    </span>
+                    <span className="flex flex-col leading-tight">
+                        <span className="whitespace-nowrap font-display text-base font-bold tracking-tight text-white sm:text-lg">
+                            Amit Pandey
+                        </span>
+                        <span className="hidden whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400 sm:block">
+                            Android Developer
+                        </span>
                     </span>
                 </a>
                 <nav aria-label="Primary">
-                    <ul className="flex flex-nowrap items-center gap-3 whitespace-nowrap text-sm sm:gap-5 sm:text-base">
-                        {navItems.map((item, i) => (
-                            <li key={item.href} className="flex items-center gap-3 sm:gap-5">
-                                {i > 0 && <span aria-hidden="true" className="h-4 w-px bg-ink/25" />}
+                    <ul className="flex items-center gap-2 text-sm sm:gap-3">
+                        {[
+                            { label: 'Resume', href: '#resume' },
+                            { label: 'Projects', href: '#projects' },
+                        ].map((item) => (
+                            <li key={item.href}>
                                 <a
                                     href={item.href}
-                                    className="inline-flex min-h-11 items-center text-ink/75 underline-offset-4 transition-colors hover:text-ink hover:underline hover:decoration-sun hover:decoration-2"
+                                    className="inline-flex min-h-11 items-center rounded-full px-3 font-medium text-zinc-300 transition-colors hover:bg-white/10 hover:text-white sm:px-4"
                                 >
                                     {item.label}
                                 </a>
                             </li>
                         ))}
+                        <li>
+                            <a
+                                href="#contact"
+                                className="inline-flex min-h-11 items-center rounded-full bg-android px-4 font-semibold text-ink transition-opacity hover:opacity-90 sm:px-5"
+                            >
+                                Hire me
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

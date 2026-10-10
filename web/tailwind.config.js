@@ -65,6 +65,8 @@ module.exports = {
 				sun: 'hsl(var(--sun))',
 				signal: 'hsl(var(--signal))',
 				pool: 'hsl(var(--pool))',
+				android: '#3ddc84',
+				sky: '#38bdf8',
 			},
 			fontFamily: {
 				display: ['Archivo', 'sans-serif'],

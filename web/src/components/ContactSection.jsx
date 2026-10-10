@@ -131,7 +131,7 @@ export default function ContactSection() {
                                         whileHover={{ scale: 1.07 }}
                                         whileTap={{ scale: 0.95 }}
                                         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                                        className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-pool font-display text-sm font-bold text-ink shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                                        className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-android font-display text-sm font-bold text-ink shadow-md shadow-android/25 transition-shadow duration-300 hover:shadow-xl hover:shadow-android/30"
                                     >
                                         Send
                                     </motion.button>
@@ -202,7 +202,7 @@ export default function ContactSection() {
 
                             <div className="rounded-lg border border-ink/15 p-5">
                                 <p className="flex items-center gap-2 text-sm font-medium text-ink">
-                                    <span aria-hidden="true" className="h-2 w-2 rounded-full bg-sun" />
+                                    <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-android" />
                                     Open to opportunities
                                 </p>
                                 <p className="mt-2 text-xs leading-relaxed text-ink/60">
