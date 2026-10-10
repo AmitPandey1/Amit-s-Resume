@@ -16,7 +16,7 @@ const socials = [
 ];
 
 const inputClass =
-    'w-full rounded-lg border border-ink/20 bg-transparent px-4 py-3 text-base text-ink sm:text-sm placeholder:text-ink/40 transition-colors focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink';
+    'w-full rounded-lg border border-white/15 bg-transparent px-4 py-3 text-base text-white sm:text-sm placeholder:text-zinc-500 transition-colors focus:border-android focus:outline-none focus:ring-1 focus:ring-android/60';
 
 export default function ContactSection() {
     const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -47,13 +47,13 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="scroll-mt-16 border-t border-ink/10">
+        <section id="contact" className="scroll-mt-16 border-t border-white/10 bg-zinc-950 text-paper">
             <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
                 <Reveal>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                         03 — Contact
                     </p>
-                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
+                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
                         Let's work together
                     </h2>
                 </Reveal>
@@ -61,20 +61,20 @@ export default function ContactSection() {
                 <div className="mt-8 grid gap-10 sm:mt-14 sm:gap-14 lg:grid-cols-[1fr_360px] lg:gap-20">
                     <Reveal>
                         {sent ? (
-                            <div className="flex h-full min-h-[320px] flex-col items-start justify-center rounded-lg border border-ink/15 p-5 sm:p-10">
-                                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-pool">
-                                    <Check className="h-6 w-6 text-ink" strokeWidth={2.5} />
+                            <div className="flex h-full min-h-[320px] flex-col items-start justify-center rounded-lg border border-white/10 p-5 sm:p-10">
+                                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-android">
+                                    <Check className="h-6 w-6 text-white" strokeWidth={2.5} />
                                 </span>
-                                <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-ink">
+                                <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-white">
                                     Message sent
                                 </h3>
-                                <p className="mt-2 max-w-sm text-sm leading-relaxed text-ink/70">
+                                <p className="mt-2 max-w-sm text-sm leading-relaxed text-zinc-300">
                                     Thanks for reaching out, {form.name.split(' ')[0]}. I read every message personally and will get back to you within 48 hours.
                                 </p>
                                 <button
                                     type="button"
                                     onClick={reset}
-                                    className="mt-6 text-sm font-medium text-ink underline decoration-sun decoration-2 underline-offset-4 transition-colors hover:text-ink/70"
+                                    className="mt-6 text-sm font-medium text-white underline decoration-android decoration-2 underline-offset-4 transition-colors hover:text-zinc-300"
                                 >
                                     Send another message
                                 </button>
@@ -83,7 +83,7 @@ export default function ContactSection() {
                             <form onSubmit={handleSubmit} noValidate className="space-y-6">
                                 <div className="grid gap-6 sm:grid-cols-2">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="contact-name" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
+                                        <label htmlFor="contact-name" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                                             Name
                                         </label>
                                         <input
@@ -97,7 +97,7 @@ export default function ContactSection() {
                                         {errors.name && <p className="text-xs text-signal">{errors.name}</p>}
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="contact-email" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
+                                        <label htmlFor="contact-email" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                                             Email
                                         </label>
                                         <input
@@ -112,7 +112,7 @@ export default function ContactSection() {
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="contact-message" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/60">
+                                    <label htmlFor="contact-message" className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                                         Message
                                     </label>
                                     <textarea
@@ -131,11 +131,11 @@ export default function ContactSection() {
                                         whileHover={{ scale: 1.07 }}
                                         whileTap={{ scale: 0.95 }}
                                         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                                        className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-android font-display text-sm font-bold text-ink shadow-md shadow-android/25 transition-shadow duration-300 hover:shadow-xl hover:shadow-android/30"
+                                        className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-android font-display text-sm font-bold text-zinc-950 shadow-md shadow-android/25 transition-shadow duration-300 hover:shadow-xl hover:shadow-android/30"
                                     >
                                         Send
                                     </motion.button>
-                                    <p className="max-w-[220px] text-xs leading-relaxed text-ink/50">
+                                    <p className="max-w-[220px] text-xs leading-relaxed text-zinc-400">
                                         Your message goes directly to Amit's inbox.
                                     </p>
                                 </div>
@@ -144,22 +144,22 @@ export default function ContactSection() {
                     </Reveal>
 
                     <Reveal delay={0.1}>
-                        <aside className="space-y-10 lg:border-l lg:border-ink/10 lg:pl-12">
+                        <aside className="space-y-10 lg:border-l lg:border-white/10 lg:pl-12">
                             <div className="space-y-6">
                                 {details.map((item) => (
                                     <div key={item.label}>
-                                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
+                                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                                             {item.label}
                                         </p>
                                         {item.href ? (
                                             <a
                                                 href={item.href}
-                                                className="mt-1.5 block text-sm font-medium text-ink underline-offset-4 hover:underline hover:decoration-sun hover:decoration-2"
+                                                className="mt-1.5 block text-sm font-medium text-white underline-offset-4 hover:underline hover:decoration-android hover:decoration-2"
                                             >
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="mt-1.5 text-sm font-medium text-ink">{item.value}</p>
+                                            <p className="mt-1.5 text-sm font-medium text-white">{item.value}</p>
                                         )}
                                     </div>
                                 ))}
@@ -170,18 +170,18 @@ export default function ContactSection() {
                                     href="/amit-pandey.vcf"
                                     download="Amit-Pandey.vcf"
                                     aria-describedby="save-contact-help"
-                                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-semibold text-paper transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/15 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-android"
                                 >
                                     <UserPlus className="h-4 w-4" aria-hidden="true" />
                                     Save to contacts
                                 </a>
-                                <p id="save-contact-help" className="mt-3 text-xs leading-relaxed text-ink/60">
+                                <p id="save-contact-help" className="mt-3 text-xs leading-relaxed text-zinc-400">
                                     Save my name, phone, email, and address. Open the downloaded contact file and choose Save or Import in your contacts app.
                                 </p>
                             </div>
 
                             <div>
-                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                                     Find me online
                                 </p>
                                 <div className="mt-3 flex items-center gap-3">
@@ -192,7 +192,7 @@ export default function ContactSection() {
                                             target="_blank"
                                             rel="noreferrer"
                                             aria-label={label}
-                                            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-200 hover:border-ink hover:bg-ink hover:text-paper"
+                                            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition-all duration-200 hover:border-android hover:bg-android/10 hover:text-android"
                                         >
                                             <Icon className="h-4 w-4" strokeWidth={1.8} />
                                         </a>
@@ -200,12 +200,12 @@ export default function ContactSection() {
                                 </div>
                             </div>
 
-                            <div className="rounded-lg border border-ink/15 p-5">
-                                <p className="flex items-center gap-2 text-sm font-medium text-ink">
+                            <div className="rounded-lg border border-white/10 p-5">
+                                <p className="flex items-center gap-2 text-sm font-medium text-white">
                                     <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-android" />
                                     Open to opportunities
                                 </p>
-                                <p className="mt-2 text-xs leading-relaxed text-ink/60">
+                                <p className="mt-2 text-xs leading-relaxed text-zinc-400">
                                     Available for senior Android/SDK engineering roles and freelance mobile platform projects.
                                 </p>
                             </div>

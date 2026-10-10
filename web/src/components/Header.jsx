@@ -15,8 +15,17 @@ export default function Header() {
         <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/90 backdrop-blur">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-10">
                 <a href="#top" className="flex items-center gap-2.5" aria-label="Amit Pandey — back to top">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-android/10 ring-1 ring-android/40">
-                        {androidRobot}
+                    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg ring-1 ring-android/50">
+                        <img
+                            src="/amit.jpg"
+                            alt=""
+                            className="h-full w-full object-cover object-top"
+                        />
+                        <span className="absolute inset-x-0 bottom-0 flex justify-center bg-black/45 py-px">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-2 w-2 text-android">
+                                <path fill="currentColor" d="M17.6 9.48l1.84-3.18a.3.3 0 0 0-.11-.42.3.3 0 0 0-.41.11l-1.87 3.24a11.5 11.5 0 0 0-10.1 0L5.08 6a.3.3 0 0 0-.41-.11.3.3 0 0 0-.11.42L6.4 9.48A10.8 10.8 0 0 0 1 17.5h22a10.8 10.8 0 0 0-5.4-8.02zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" />
+                            </svg>
+                        </span>
                     </span>
                     <span className="flex flex-col leading-tight">
                         <span className="whitespace-nowrap font-display text-base font-bold tracking-tight text-white sm:text-lg">
