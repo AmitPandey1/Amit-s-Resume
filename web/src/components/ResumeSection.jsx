@@ -50,7 +50,7 @@ const certifications = [
     'Java Design Patterns',
 ];
 
-const barColors = ['bg-sun', 'bg-signal', 'bg-pool'];
+const barColors = ['bg-android', 'bg-sky', 'bg-signal'];
 
 function Subsection({ index, title, caption, children }) {
     return (
@@ -74,8 +74,12 @@ export default function ResumeSection() {
                         01 — Resume
                     </p>
                     <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
-                        Nearly 8 years building Android SDKs
+                        Release history<span className="text-android">.</span>
                     </h2>
+                    <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">
+                        v1.0 shipped in 2018. Since then: continuous delivery of SDK features,
+                        Play Store releases, and zero-downtime migrations across API levels.
+                    </p>
                 </Reveal>
 
                 <div className="mt-10">

@@ -173,11 +173,19 @@ export default function ProjectsSection() {
                                 <div><dt className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">Highlight</dt><dd className="mt-1 text-sm font-medium text-ink">{featuredWork.metric}</dd></div>
                             </dl>
                         </div>
-                        <div className="grid min-w-0 grid-cols-2 gap-2 sm:gap-3">
+                        <div className="relative grid min-w-0 grid-cols-2 gap-2 overflow-hidden rounded-2xl bg-ink p-4 sm:gap-3 sm:p-6">
+                            {/* status bar strip — reads as a device screen */}
+                            <div className="col-span-2 mb-1 flex items-center justify-between px-1 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
+                                <span>SDK features</span>
+                                <span className="flex items-center gap-1">
+                                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-android" />
+                                    online
+                                </span>
+                            </div>
                             {featuredWork.features.map(({ icon, label }) => (
-                                <div key={label} className="flex min-w-0 flex-col items-start gap-2 rounded-xl border border-ink/10 p-3 sm:flex-row sm:items-center sm:gap-3 sm:p-4 md:flex-col md:items-start xl:flex-row xl:items-center">
+                                <div key={label} className="flex min-w-0 flex-col items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-3 transition-colors hover:border-android/50 sm:flex-row sm:items-center sm:gap-3 sm:p-4 md:flex-col md:items-start xl:flex-row xl:items-center">
                                     <span className="shrink-0 text-2xl">{icon}</span>
-                                    <span className="min-w-0 break-words text-sm font-medium text-ink/70 leading-snug">{label}</span>
+                                    <span className="min-w-0 break-words text-sm font-medium text-zinc-200 leading-snug">{label}</span>
                                 </div>
                             ))}
                         </div>
@@ -188,7 +196,7 @@ export default function ProjectsSection() {
                 <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {restWork.map((project, i) => (
                         <Reveal key={project.title} delay={i * 0.07}>
-                            <article className="group h-full rounded-2xl border border-ink/10 p-5 sm:p-6 transition-shadow duration-300 hover:shadow-lg">
+                            <article className="group h-full rounded-2xl border border-ink/10 bg-white/60 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-android/60 hover:shadow-lg hover:shadow-android/10">
                                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
                                     {project.index} — {project.year}
                                 </p>
@@ -232,9 +240,9 @@ export default function ProjectsSection() {
                         <Reveal key={project.title} delay={i * 0.1}>
                             <article className="group relative h-full rounded-2xl border border-ink/10 p-5 sm:p-8 transition-all duration-300 hover:border-ink/30 hover:shadow-xl">
                                 {/* Live badge */}
-                                <span className="absolute right-6 top-6 flex items-center gap-1.5 rounded-full bg-sun/20 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-ink/70">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-sun animate-pulse" />
-                                    Live
+                                <span className="absolute right-6 top-6 flex items-center gap-1.5 rounded-full bg-android/15 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-ink/70 ring-1 ring-android/40">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-android animate-pulse" />
+                                    Live on Play
                                 </span>
 
                                 <div className="text-4xl mb-4">{project.icon}</div>
@@ -259,7 +267,7 @@ export default function ProjectsSection() {
                                     href={project.playStoreUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-ink/20 px-4 py-3 font-mono text-xs uppercase tracking-[0.08em] sm:tracking-[0.15em] text-ink/70 transition-all duration-200 hover:border-ink hover:bg-ink hover:text-paper"
+                                    className="mt-6 inline-flex items-center gap-2 rounded-full bg-android px-4 py-3 font-mono text-xs uppercase tracking-[0.08em] sm:tracking-[0.15em] text-ink shadow-md shadow-android/20 transition-all duration-200 hover:brightness-110 hover:shadow-lg"
                                 >
                                     <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M3.18 23.76c.35.2.74.24 1.12.14l12.54-12.54-3.54-3.54L3.18 23.76zM20.8 10.6L17.86 9 3.16.24C2.9.08 2.6 0 2.3 0c-.16 0-.33.03-.48.08L14.3 12.36 20.8 10.6zM22.4 11.45l-1.6-.96-1.86.5-3.7 10.1c.08.28.08.58 0 .88.29-.04.56-.17.78-.38l6.38-10.14zM2.3 24c.3 0 .6-.08.86-.24l.02-.01L13.3 13.64 9.76 10.1 2.3 24z"/>
