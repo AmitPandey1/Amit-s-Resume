@@ -31,7 +31,7 @@ const stats = [
   { value: 2, suffix: '', label: 'Apps on Play Store' }
 ];
 
-export default function Hero() {
+export default function Hero({ onShowFullDetails }) {
   return (
     <section id="top" className="relative overflow-hidden bg-ink text-paper">
       {/* subtle grid background */}
@@ -51,7 +51,12 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:px-10 lg:py-24">
-        <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="hidden min-w-0 md:block"
+        >
           <motion.div
             variants={item}
             className="inline-flex items-center gap-2 rounded-full border border-android/40 bg-android/10 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-android"
@@ -149,9 +154,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="lg:justify-self-end"
+          className="w-full lg:justify-self-end"
         >
-          <DigitalCard />
+          <DigitalCard onShowFullDetails={onShowFullDetails} />
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Smartphone, Mail, Phone, MapPin, QrCode, Download } from 'lucide-react';
+import { Smartphone, Mail, Phone, MapPin, QrCode, Download, FileText } from 'lucide-react';
 
 // A digital business card — the hero visual of the portfolio.
 // Uses Amit's real profile photo (public/amit.jpg) and mirrors the
@@ -34,7 +34,7 @@ function QrPattern() {
     );
 }
 
-export default function DigitalCard({ className = '' }) {
+export default function DigitalCard({ className = '', onShowFullDetails }) {
     const reduceMotion = useReducedMotion();
 
     return (
@@ -184,6 +184,20 @@ export default function DigitalCard({ className = '' }) {
                         </span>
                     ))}
                 </div>
+
+                {/* mobile actions — full biodata + resume download live in the sheet */}
+                {onShowFullDetails && (
+                    <div className="mx-5 mb-4 md:hidden">
+                        <button
+                            type="button"
+                            onClick={onShowFullDetails}
+                            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-android/50 bg-android/10 px-4 font-display text-sm font-bold text-android transition-colors active:bg-android active:text-ink"
+                        >
+                            <FileText className="h-4 w-4" aria-hidden="true" />
+                            Full Details &amp; Resume
+                        </button>
+                    </div>
+                )}
 
                 {/* gesture pill */}
                 <div className="flex justify-center pb-3">
