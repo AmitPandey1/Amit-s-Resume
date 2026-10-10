@@ -11,6 +11,21 @@ export default function Footer() {
     return (
         <footer className="bg-ink text-paper">
             <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:gap-10 sm:px-6 sm:py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
+                <div className="flex items-center gap-3 sm:col-span-2 lg:col-span-1">
+                    <span className="shrink-0 rounded-xl bg-gradient-to-tr from-android to-sky p-[2px]">
+                        <img
+                            src="/amit.jpg"
+                            alt="Portrait of Amit Pandey"
+                            className="h-12 w-12 rounded-[10px] object-cover object-top"
+                        />
+                    </span>
+                    <span className="min-w-0">
+                        <span className="block font-display text-base font-bold tracking-tight text-white">Amit Pandey</span>
+                        <span className="block truncate font-mono text-[10px] uppercase tracking-[0.14em] text-android">
+                            Senior Android Developer
+                        </span>
+                    </span>
+                </div>
                 <div>
                     <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">Phone</p>
                     <a

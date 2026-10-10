@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Download, Github, Linkedin, Mail } from 'lucide-react';
-import PhoneMockup from './PhoneMockup';
+import DigitalCard from './DigitalCard';
 import CountUp from './CountUp';
 
 const container = {
@@ -50,7 +50,7 @@ export default function Hero() {
         className="pointer-events-none absolute -right-32 top-1/3 h-96 w-96 rounded-full bg-android/20 blur-3xl"
       />
 
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:px-10 lg:py-28">
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:px-10 lg:py-24">
         <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
           <motion.div
             variants={item}
@@ -129,7 +129,7 @@ export default function Hero() {
 
           <motion.dl
             variants={item}
-            className="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-8"
+            className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-6"
           >
             {stats.map((stat) => (
               <div key={stat.label}>
@@ -151,7 +151,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="lg:justify-self-end"
         >
-          <PhoneMockup />
+          <DigitalCard />
         </motion.div>
       </div>
     </section>

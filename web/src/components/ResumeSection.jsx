@@ -54,11 +54,11 @@ const barColors = ['bg-android', 'bg-sky', 'bg-signal'];
 
 function Subsection({ index, title, caption, children }) {
     return (
-        <div className="grid gap-6 border-t border-ink/10 py-8 sm:gap-8 sm:py-12 md:grid-cols-[220px_1fr] md:gap-14">
+        <div className="grid gap-6 border-t border-white/10 py-8 sm:gap-8 sm:py-12 md:grid-cols-[220px_1fr] md:gap-14">
             <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">{index}</p>
-                <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-ink">{title}</h3>
-                {caption && <p className="mt-2 text-sm leading-relaxed text-ink/60">{caption}</p>}
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">{index}</p>
+                <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-white">{title}</h3>
+                {caption && <p className="mt-2 text-sm leading-relaxed text-zinc-400">{caption}</p>}
             </div>
             <div>{children}</div>
         </div>
@@ -67,16 +67,25 @@ function Subsection({ index, title, caption, children }) {
 
 export default function ResumeSection() {
     return (
-        <section id="resume" className="scroll-mt-16">
+        <section id="resume" className="relative scroll-mt-16 overflow-hidden">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-[0.04]"
+                style={{
+                    backgroundImage:
+                        'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+                    backgroundSize: '44px 44px',
+                }}
+            />
             <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-20 lg:px-10 lg:py-28">
                 <Reveal>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.25em] text-zinc-400">
                         01 — Resume
                     </p>
-                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl">
+                    <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
                         Release history<span className="text-android">.</span>
                     </h2>
-                    <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">
+                    <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-300">
                         v1.0 shipped in 2018. Since then: continuous delivery of SDK features,
                         Play Store releases, and zero-downtime migrations across API levels.
                     </p>
@@ -89,19 +98,19 @@ export default function ResumeSection() {
                             title="Where I've worked"
                             caption="Mobile SDK engineering across Android, React Native, Kony, and Cordova platforms."
                         >
-                            <div className="divide-y divide-ink/10">
+                            <div className="divide-y divide-white/10">
                                 {experience.map((job) => (
                                     <article
                                         key={job.role}
                                         className="grid gap-2 py-7 first:pt-0 last:pb-0 lg:grid-cols-[170px_1fr] lg:gap-6"
                                     >
-                                        <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50 sm:pt-1.5">
+                                        <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 sm:pt-1.5">
                                             {job.period}
                                         </p>
                                         <div>
-                                            <h4 className="font-display text-lg font-bold text-ink">{job.role}</h4>
-                                            <p className="text-sm font-medium text-ink/60">{job.company}</p>
-                                            <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink/70">{job.summary}</p>
+                                            <h4 className="font-display text-lg font-bold text-white">{job.role}</h4>
+                                            <p className="text-sm font-medium text-zinc-400">{job.company}</p>
+                                            <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-300">{job.summary}</p>
                                         </div>
                                     </article>
                                 ))}
@@ -115,19 +124,19 @@ export default function ResumeSection() {
                             title="Where I studied"
                             caption="Strong academic foundation in computer science."
                         >
-                            <div className="divide-y divide-ink/10">
+                            <div className="divide-y divide-white/10">
                                 {education.map((entry) => (
                                     <article
                                         key={entry.degree}
                                         className="grid gap-2 py-7 first:pt-0 last:pb-0 lg:grid-cols-[170px_1fr] lg:gap-6"
                                     >
-                                        <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50 sm:pt-1.5">
+                                        <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 sm:pt-1.5">
                                             {entry.period}
                                         </p>
                                         <div>
-                                            <h4 className="font-display text-lg font-bold text-ink">{entry.degree}</h4>
-                                            <p className="text-sm font-medium text-ink/60">{entry.school}</p>
-                                            <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink/70">{entry.summary}</p>
+                                            <h4 className="font-display text-lg font-bold text-white">{entry.degree}</h4>
+                                            <p className="text-sm font-medium text-zinc-400">{entry.school}</p>
+                                            <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-300">{entry.summary}</p>
                                         </div>
                                     </article>
                                 ))}
@@ -145,10 +154,10 @@ export default function ResumeSection() {
                                 {skills.map((skill, i) => (
                                     <div key={skill.name}>
                                         <div className="flex items-baseline justify-between gap-4">
-                                            <p className="text-sm font-medium text-ink">{skill.name}</p>
-                                            <p className="font-mono text-xs text-ink/50">{skill.level}%</p>
+                                            <p className="text-sm font-medium text-white">{skill.name}</p>
+                                            <p className="font-mono text-xs text-zinc-400">{skill.level}%</p>
                                         </div>
-                                        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink/10">
+                                        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
                                             <motion.div
                                                 initial={{ scaleX: 0 }}
                                                 whileInView={{ scaleX: skill.level / 100 }}
@@ -173,7 +182,7 @@ export default function ResumeSection() {
                                 {certifications.map((cert) => (
                                     <li
                                         key={cert}
-                                        className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.15em] text-ink/70"
+                                        className="rounded-full border border-white/15 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.15em] text-zinc-300"
                                     >
                                         {cert}
                                     </li>
