@@ -21,7 +21,7 @@ export default function HomePage() {
                     content="The professional portfolio of Amit Pandey, a Senior Android Developer and Mobile SDK Engineer based in Noida, India with nearly 8 years of experience building Android SDKs, push notifications, in-app messaging, and cross-platform integrations."
                 />
             </Helmet>
-            <div className="min-h-screen bg-zinc-950 font-sans text-paper antialiased">
+            <div className="min-h-screen bg-background font-sans text-foreground antialiased">
                 <Header />
                 <main>
                     <Hero onShowFullDetails={() => setDetailsOpen(true)} />

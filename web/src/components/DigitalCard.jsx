@@ -1,10 +1,11 @@
 import React from 'react';
+import { profile } from '../data/resume';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Smartphone, Mail, Phone, MapPin, QrCode, Download, FileText } from 'lucide-react';
 
 // A digital business card — the hero visual of the portfolio.
 // Uses Amit's real profile photo (public/amit.jpg) and mirrors the
-// dark "device screen" design language used across the site.
+// theme-aware device screen design used across the site.
 
 const androidRobot = (className) => (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
@@ -14,25 +15,6 @@ const androidRobot = (className) => (
         />
     </svg>
 );
-
-// Deterministic pseudo-QR pattern (decorative).
-function QrPattern() {
-    const n = 11;
-    const cells = [];
-    for (let r = 0; r < n; r++) {
-        for (let c = 0; c < n; c++) {
-            const finder =
-                (r < 3 && c < 3) || (r < 3 && c > n - 4) || (r > n - 4 && c < 3);
-            const on = finder ? !(r === 1 && c === 1) && !(r === 1 && c === n - 3) && !(r === n - 3 && c === 1) : (r * 7 + c * 13 + r * c * 3) % 5 < 2;
-            if (on) cells.push(<rect key={`${r}-${c}`} x={c} y={r} width="1" height="1" />);
-        }
-    }
-    return (
-        <svg viewBox={`0 0 ${n} ${n}`} className="h-full w-full text-zinc-300" fill="currentColor" aria-hidden="true">
-            {cells}
-        </svg>
-    );
-}
 
 export default function DigitalCard({ className = '', onShowFullDetails }) {
     const reduceMotion = useReducedMotion();
@@ -50,7 +32,7 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                 initial={reduceMotion ? false : { opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -left-6 top-16 z-10 hidden rotate-[-4deg] items-center gap-1.5 rounded-full border border-white/10 bg-zinc-900/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-android shadow-xl backdrop-blur sm:flex"
+                className="absolute -left-6 top-16 z-10 hidden rotate-[-4deg] items-center gap-1.5 rounded-full border border-line/10 bg-surface/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-android shadow-xl backdrop-blur sm:flex"
             >
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-android" />
                 Available for hire
@@ -59,7 +41,7 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                 initial={reduceMotion ? false : { opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.1, duration: 0.5 }}
-                className="absolute -right-5 bottom-20 z-10 hidden rotate-[3deg] items-center gap-1.5 rounded-full border border-white/10 bg-zinc-900/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-sky shadow-xl backdrop-blur sm:flex"
+                className="absolute -right-5 bottom-20 z-10 hidden rotate-[3deg] items-center gap-1.5 rounded-full border border-line/10 bg-surface/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-sky shadow-xl backdrop-blur sm:flex"
             >
                 API 36 · Kotlin 2.0
             </motion.div>
@@ -70,7 +52,7 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                 animate={{ opacity: 1, y: 0, rotate: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
                 whileHover={reduceMotion ? undefined : { y: -6 }}
-                className="relative overflow-hidden rounded-3xl border-y-[10px] border-x-[7px] border-zinc-800 bg-zinc-950 shadow-2xl shadow-black/50"
+                className="relative overflow-hidden rounded-3xl border-y-[10px] border-x-[7px] border-frame bg-background shadow-2xl shadow-black/50"
             >
                 {/* subtle grid, like a device wallpaper */}
                 <div
@@ -78,13 +60,13 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                     className="pointer-events-none absolute inset-0 opacity-[0.06]"
                     style={{
                         backgroundImage:
-                            'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+                            'linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)',
                         backgroundSize: '28px 28px',
                     }}
                 />
 
                 {/* status bar */}
-                <div className="flex items-center justify-between px-5 pt-2 font-mono text-[10px] text-zinc-400">
+                <div className="flex items-center justify-between px-5 pt-2 font-mono text-[10px] text-muted-foreground">
                     <span>9:41</span>
                     <span className="flex items-center gap-1.5">
                         <Smartphone className="h-3 w-3 text-android" />
@@ -95,14 +77,14 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                 </div>
 
                 {/* header strip */}
-                <div className="mx-5 mt-3 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3.5 py-2">
+                <div className="mx-5 mt-3 flex items-center justify-between rounded-xl border border-line/10 bg-line/5 px-3.5 py-2">
                     <span className="flex items-center gap-1.5">
                         {androidRobot('h-3.5 w-3.5 text-android')}
-                        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-400">
+                        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
                             Digital Card
                         </span>
                     </span>
-                    <span className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                    <span className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.15em] text-muted-foreground">
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-android" />
                         online
                     </span>
@@ -118,14 +100,19 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                         />
                     </div>
                     <div className="min-w-0">
-                        <p className="font-display text-xl font-extrabold leading-tight tracking-tight text-white">
+                        <p className="font-display text-xl font-extrabold leading-tight tracking-tight text-foreground">
                             Amit Pandey
                         </p>
                         <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-android">
                             Senior Android &amp; Mobile SDK Developer
                         </p>
-                        <p className="mt-1 text-xs text-zinc-400">Semusi Technologies · Noida, IN</p>
+                        <p className="mt-1 text-xs text-muted-foreground">Semusi Technologies · Noida, IN</p>
                     </div>
+                </div>
+
+                <div className="mx-5 mt-4 flex items-baseline gap-2 rounded-xl border border-android/25 bg-android/10 px-4 py-3">
+                    <span className="font-display text-2xl font-extrabold text-android">{profile.yearsExperience}+</span>
+                    <span className="text-sm font-medium text-foreground">years of Android experience</span>
                 </div>
 
                 {/* contact rows */}
@@ -136,11 +123,11 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                         { Icon: MapPin, label: 'Noida, Uttar Pradesh, India', href: null },
                     ].map(({ Icon, label, href }) => {
                         const row = (
-                            <li className="flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-white/5">
-                                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/5 text-android">
+                            <li className="flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-line/5">
+                                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-line/10 bg-line/5 text-android">
                                     <Icon className="h-3.5 w-3.5" strokeWidth={1.8} />
                                 </span>
-                                <span className="truncate text-sm text-zinc-200">{label}</span>
+                                <span className="truncate text-sm text-foreground">{label}</span>
                             </li>
                         );
                         return href ? (
@@ -154,18 +141,19 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                 </ul>
 
                 {/* QR + save contact */}
-                <div className="mx-5 mt-5 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <div className="grid h-16 w-16 shrink-0 place-items-center rounded-lg bg-zinc-900 p-1.5 ring-1 ring-white/10">
-                        <QrPattern />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                        <p className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-400">
+                <div className="mx-5 mt-5 flex flex-col items-center gap-3 rounded-2xl border border-line/10 bg-line/5 p-4">
+                    <a href="/amit-pandey-qr.svg" target="_blank" rel="noreferrer" aria-label="Open contact QR code at full size" className="block shrink-0 rounded-lg bg-white p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-android">
+                        <img src="/amit-pandey-qr.svg" width="164" height="164" alt="Scan to save Amit Pandey's name, phone number, email and address" />
+                    </a>
+                    <div className="w-full min-w-0">
+                        <p className="flex items-center justify-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                             <QrCode className="h-3 w-3 text-sky" /> Scan to connect
                         </p>
+                        <p className="mt-1 text-center text-xs text-muted-foreground">Scan with your camera to save my contact.</p>
                         <a
                             href="/amit-pandey.vcf"
                             download="Amit-Pandey.vcf"
-                            className="mt-2 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg bg-android px-4 font-display text-xs font-bold text-ink shadow-md shadow-android/25 transition-all hover:brightness-110"
+                            className="mt-2 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg bg-android px-4 font-display text-xs font-bold text-on-android shadow-md shadow-android/25 transition-all hover:brightness-110"
                         >
                             <Download className="h-3.5 w-3.5" />
                             Save Contact (.vcf)
@@ -178,7 +166,7 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                     {['Kotlin', 'Java', 'Jetpack Compose', 'FCM', 'MVVM'].map((t) => (
                         <span
                             key={t}
-                            className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[9px] text-zinc-400"
+                            className="rounded-md border border-line/10 bg-line/5 px-2 py-0.5 font-mono text-[9px] text-muted-foreground"
                         >
                             {t}
                         </span>
@@ -191,7 +179,7 @@ export default function DigitalCard({ className = '', onShowFullDetails }) {
                         <button
                             type="button"
                             onClick={onShowFullDetails}
-                            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-android/50 bg-android/10 px-4 font-display text-sm font-bold text-android transition-colors active:bg-android active:text-ink"
+                            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-android/50 bg-android/10 px-4 font-display text-sm font-bold text-android transition-colors active:bg-android active:text-on-android"
                         >
                             <FileText className="h-4 w-4" aria-hidden="true" />
                             Full Details &amp; Resume

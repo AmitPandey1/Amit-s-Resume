@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Download, Briefcase, GraduationCap, Award, FileUser } from 'lucide-react';
 import {
     profile,
@@ -7,12 +7,10 @@ import {
     skills,
     certifications,
 } from '../data/resume';
-import { openPrintableResume } from '../lib/printResume';
 
 // Mobile-only "Full details" bottom sheet: shows the complete biodata and a
-// Download Resume action (opens the print dialog → Save as PDF).
+// Direct PDF download, also available in the desktop resume section.
 export default function FullDetailsSheet({ open, onClose }) {
-    const [downloading, setDownloading] = useState(false);
 
     React.useEffect(() => {
         if (!open) return undefined;
@@ -27,12 +25,6 @@ export default function FullDetailsSheet({ open, onClose }) {
 
     if (!open) return null;
 
-    const handleDownload = () => {
-        setDownloading(true);
-        openPrintableResume();
-        setTimeout(() => setDownloading(false), 1500);
-    };
-
     return (
         <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Full details">
             {/* backdrop */}
@@ -44,9 +36,9 @@ export default function FullDetailsSheet({ open, onClose }) {
             />
 
             {/* sheet */}
-            <div className="absolute inset-x-0 bottom-0 max-h-[88vh] overflow-y-auto rounded-t-3xl border-t border-android/30 bg-zinc-950 pb-8 shadow-2xl">
+            <div className="absolute inset-x-0 bottom-0 max-h-[88vh] overflow-y-auto rounded-t-3xl border-t border-android/30 bg-background pb-8 shadow-2xl">
                 {/* sticky mini header */}
-                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-zinc-950/95 px-5 py-3 backdrop-blur">
+                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line/10 bg-background/95 px-5 py-3 backdrop-blur">
                     <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-android">
                         Full details
                     </span>
@@ -54,7 +46,7 @@ export default function FullDetailsSheet({ open, onClose }) {
                         type="button"
                         onClick={onClose}
                         aria-label="Close"
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-zinc-300 active:bg-white/10"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-line/15 text-copy active:bg-line/10"
                     >
                         <X className="h-4 w-4" />
                     </button>
@@ -71,53 +63,53 @@ export default function FullDetailsSheet({ open, onClose }) {
                             />
                         </div>
                         <div className="min-w-0">
-                            <h3 className="font-display text-xl font-extrabold leading-tight text-white">
+                            <h3 className="font-display text-xl font-extrabold leading-tight text-foreground">
                                 {profile.name}
                             </h3>
                             <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-android">
                                 {profile.title}
                             </p>
-                            <p className="mt-1 text-xs text-zinc-400">{profile.company}</p>
+                            <p className="mt-1 text-xs text-muted-foreground">{profile.company}</p>
                         </div>
                     </div>
 
                     {/* download resume */}
-                    <button
-                        type="button"
-                        onClick={handleDownload}
-                        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-android px-4 font-display text-sm font-bold text-ink shadow-lg shadow-android/25 transition-all active:brightness-95"
+                    <a
+                        href="/Amit-Pandey-Resume.pdf"
+                        download="Amit-Pandey-Resume.pdf"
+                        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-android px-4 font-display text-sm font-bold text-on-android shadow-lg shadow-android/25 transition-all active:brightness-95"
                     >
                         <Download className="h-4 w-4" aria-hidden="true" />
-                        {downloading ? 'Preparing resume…' : 'Download Resume (PDF)'}
-                    </button>
-                    <p className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">
-                        Choose “Save as PDF” in the print dialog
+                        Download Resume (PDF)
+                    </a>
+                    <p className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                        Download a PDF copy of my resume.
                     </p>
 
                     {/* summary */}
                     <section className="mt-7">
-                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
+                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                             <FileUser className="h-3.5 w-3.5 text-android" aria-hidden="true" />
                             Profile
                         </h4>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">{profile.summary}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-copy">{profile.summary}</p>
                     </section>
 
                     {/* experience */}
                     <section className="mt-7">
-                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
+                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                             <Briefcase className="h-3.5 w-3.5 text-android" aria-hidden="true" />
                             Experience
                         </h4>
                         <div className="mt-3 space-y-5">
                             {experience.map((job) => (
-                                <article key={job.role} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                    <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-400">
+                                <article key={job.role} className="rounded-xl border border-line/10 bg-line/5 p-4">
+                                    <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                                         {job.period}
                                     </p>
-                                    <h5 className="mt-1 font-display text-base font-bold text-white">{job.role}</h5>
-                                    <p className="text-xs font-medium text-zinc-400">{job.company}</p>
-                                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">{job.summary}</p>
+                                    <h5 className="mt-1 font-display text-base font-bold text-foreground">{job.role}</h5>
+                                    <p className="text-xs font-medium text-muted-foreground">{job.company}</p>
+                                    <p className="mt-2 text-sm leading-relaxed text-copy">{job.summary}</p>
                                 </article>
                             ))}
                         </div>
@@ -125,19 +117,19 @@ export default function FullDetailsSheet({ open, onClose }) {
 
                     {/* education */}
                     <section className="mt-7">
-                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
+                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                             <GraduationCap className="h-3.5 w-3.5 text-android" aria-hidden="true" />
                             Education
                         </h4>
                         <div className="mt-3 space-y-5">
                             {education.map((ed) => (
-                                <article key={ed.degree} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                    <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-400">
+                                <article key={ed.degree} className="rounded-xl border border-line/10 bg-line/5 p-4">
+                                    <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                                         {ed.period}
                                     </p>
-                                    <h5 className="mt-1 font-display text-base font-bold text-white">{ed.degree}</h5>
-                                    <p className="text-xs font-medium text-zinc-400">{ed.school}</p>
-                                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">{ed.summary}</p>
+                                    <h5 className="mt-1 font-display text-base font-bold text-foreground">{ed.degree}</h5>
+                                    <p className="text-xs font-medium text-muted-foreground">{ed.school}</p>
+                                    <p className="mt-2 text-sm leading-relaxed text-copy">{ed.summary}</p>
                                 </article>
                             ))}
                         </div>
@@ -145,7 +137,7 @@ export default function FullDetailsSheet({ open, onClose }) {
 
                     {/* skills */}
                     <section className="mt-7">
-                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-400">
+                        <h4 className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                             <Award className="h-3.5 w-3.5 text-android" aria-hidden="true" />
                             Skills &amp; Certifications
                         </h4>
@@ -153,7 +145,7 @@ export default function FullDetailsSheet({ open, onClose }) {
                             {skills.map((s) => (
                                 <li
                                     key={s}
-                                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[11px] text-zinc-300"
+                                    className="rounded-md border border-line/10 bg-line/5 px-2.5 py-1 font-mono text-[11px] text-copy"
                                 >
                                     {s}
                                 </li>
@@ -172,7 +164,7 @@ export default function FullDetailsSheet({ open, onClose }) {
                     <a
                         href="#contact"
                         onClick={onClose}
-                        className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/25 font-display text-sm font-bold text-white transition-colors active:border-android active:text-android"
+                        className="mt-8 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-line/25 font-display text-sm font-bold text-foreground transition-colors active:border-android active:text-android"
                     >
                         Contact me
                     </a>

@@ -7,6 +7,8 @@
 body {
   font-family: "Inter", sans-serif;
   overflow-x: clip;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,13 +28,20 @@ body {
 
 @layer base {
   :root {
+    --page: 210 25% 97%;
+    --surface: 210 20% 94%;
+    --frame: 215 15% 82%;
+    --copy: 215 18% 28%;
+    --android: 150 76% 26%;
+    --on-android: 0 0% 100%;
+    --sky: 200 90% 32%;
     --paper: 0 0% 93%;
     --ink: 0 0% 8%;
     --sun: 40 100% 48%;
     --signal: 8 85% 53%;
     --pool: 180 55% 67%;
 
-    --background: 0 0% 93%;
+    --background: 0 0% 100%;
     --foreground: 0 0% 8%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 8%;
@@ -62,6 +71,13 @@ body {
     --sidebar-ring: 0 0% 8%;
   }
   .dark {
+    --page: 0 0% 8%;
+    --surface: 240 6% 10%;
+    --frame: 240 4% 16%;
+    --copy: 240 5% 84%;
+    --android: 147 69% 55%;
+    --on-android: 0 0% 8%;
+    --sky: 198 93% 60%;
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;

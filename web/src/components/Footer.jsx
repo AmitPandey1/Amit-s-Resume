@@ -9,7 +9,7 @@ const socials = [
 
 export default function Footer() {
     return (
-        <footer className="bg-ink text-paper">
+        <footer className="bg-page text-foreground">
             <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:gap-10 sm:px-6 sm:py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
                 <div className="flex items-center gap-3 sm:col-span-2 lg:col-span-1">
                     <span className="shrink-0 rounded-xl bg-gradient-to-tr from-android to-sky p-[2px]">
@@ -20,32 +20,32 @@ export default function Footer() {
                         />
                     </span>
                     <span className="min-w-0">
-                        <span className="block font-display text-base font-bold tracking-tight text-white">Amit Pandey</span>
+                        <span className="block font-display text-base font-bold tracking-tight text-foreground">Amit Pandey</span>
                         <span className="block truncate font-mono text-[10px] uppercase tracking-[0.14em] text-android">
                             Senior Android Developer
                         </span>
                     </span>
                 </div>
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">Phone</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Phone</p>
                     <a
                         href="tel:+917379363416"
-                        className="mt-2 block text-sm text-zinc-300 transition-colors hover:text-android"
+                        className="mt-2 block text-sm text-copy transition-colors hover:text-android"
                     >
                         +91 7379363416
                     </a>
                 </div>
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">Email</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Email</p>
                     <a
                         href="mailto:ap78700@gmail.com"
-                        className="mt-2 block text-sm text-zinc-300 transition-colors hover:text-android"
+                        className="mt-2 block text-sm text-copy transition-colors hover:text-android"
                     >
                         ap78700@gmail.com
                     </a>
                 </div>
                 <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                         Find me online
                     </p>
                     <div className="mt-2 flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label={label}
-                                className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-300 ring-1 ring-white/15 transition-colors hover:bg-android hover:text-ink"
+                                className="flex h-9 w-9 items-center justify-center rounded-full text-copy ring-1 ring-line/15 transition-colors hover:bg-android hover:text-on-android"
                             >
                                 <Icon className="h-4 w-4" strokeWidth={1.8} />
                             </a>
@@ -64,8 +64,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="lg:text-right">
-                    <p className="text-sm text-zinc-400">© 2026 Amit Pandey. All rights reserved.</p>
-                    <p className="mt-1 text-sm text-zinc-400">Senior Android Developer · Noida, India.</p>
+                    <p className="text-sm text-muted-foreground">© 2026 Amit Pandey. All rights reserved.</p>
+                    <p className="mt-1 text-sm text-muted-foreground">Senior Android Developer · Noida, India.</p>
                 </div>
             </div>
         </footer>

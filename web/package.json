@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --host :: --port 3000",
+    "resume:generate": "node scripts/generate-resume.mjs",
     "build": "vite build",
     "start": "vite preview --host :: --port 3000",
     "lint": "eslint . --quiet; lint_status=$?; eslint \"src/**/*.jsx\" --config eslint.config.mjs --format ./eslint.unicode-escapes-formatter.mjs --no-error-on-unmatched-pattern; exit $lint_status",

@@ -3,6 +3,7 @@
 
 export const profile = {
     name: 'Amit Pandey',
+    yearsExperience: 8,
     title: 'Senior Android & Mobile SDK Developer',
     company: 'Semusi Technologies · Noida, India',
     email: 'ap78700@gmail.com',

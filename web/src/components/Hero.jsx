@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Smartphone, Download, Github, Linkedin, Mail } from 'lucide-react';
 import DigitalCard from './DigitalCard';
 import CountUp from './CountUp';
+import { profile } from '../data/resume';
 
 const container = {
   hidden: {},
@@ -26,21 +27,21 @@ const item = {
 const techBadges = ['Kotlin', 'Java', 'Jetpack Compose', 'FCM', 'REST APIs', 'MVVM', 'Room'];
 
 const stats = [
-  { value: 8, suffix: '+', label: 'Years of Android' },
+  { value: profile.yearsExperience, suffix: '+', label: 'Years of Android' },
   { value: 4, suffix: '', label: 'Platforms supported' },
   { value: 2, suffix: '', label: 'Apps on Play Store' }
 ];
 
 export default function Hero({ onShowFullDetails }) {
   return (
-    <section id="top" className="relative overflow-hidden bg-ink text-paper">
+    <section id="top" className="relative overflow-hidden bg-page text-foreground">
       {/* subtle grid background */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+            'linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)',
           backgroundSize: '44px 44px'
         }}
       />
@@ -76,9 +77,9 @@ export default function Hero({ onShowFullDetails }) {
             on 3 billion phones.
           </motion.h1>
 
-          <motion.p variants={item} className="mt-6 max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+          <motion.p variants={item} className="mt-6 max-w-xl text-base leading-relaxed text-copy sm:text-lg">
             Nearly 8 years engineering the{' '}
-            <strong className="font-semibold text-white">AppICE Android SDK</strong> — push
+            <strong className="font-semibold text-foreground">AppICE Android SDK</strong> — push
             notifications, in-app messaging, geofencing and cross-platform bridges for React
             Native, Flutter, Cordova and Kony — plus apps live on the Google Play Store.
           </motion.p>
@@ -88,7 +89,7 @@ export default function Hero({ onShowFullDetails }) {
               href="#resume"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 rounded-full bg-android px-6 py-3.5 font-display text-sm font-bold text-ink shadow-lg shadow-android/20 transition-shadow hover:shadow-xl hover:shadow-android/30"
+              className="inline-flex items-center gap-2 rounded-full bg-android px-6 py-3.5 font-display text-sm font-bold text-on-android shadow-lg shadow-android/20 transition-shadow hover:shadow-xl hover:shadow-android/30"
             >
               <Download className="h-4 w-4" aria-hidden="true" />
               View my work
@@ -97,7 +98,7 @@ export default function Hero({ onShowFullDetails }) {
               href="#contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-display text-sm font-bold text-white transition-colors hover:border-android hover:text-android"
+              className="inline-flex items-center gap-2 rounded-full border border-line/25 px-6 py-3.5 font-display text-sm font-bold text-foreground transition-colors hover:border-android hover:text-android"
             >
               Let&apos;s talk
             </motion.a>
@@ -113,7 +114,7 @@ export default function Hero({ onShowFullDetails }) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-zinc-300 transition-colors hover:border-android hover:text-android"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line/20 text-copy transition-colors hover:border-android hover:text-android"
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.8} />
                 </a>
@@ -125,7 +126,7 @@ export default function Hero({ onShowFullDetails }) {
             {techBadges.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-white/10 bg-white/5 px-3 py-1 font-mono text-[11px] text-zinc-300"
+                className="rounded-md border border-line/10 bg-line/5 px-3 py-1 font-mono text-[11px] text-copy"
               >
                 {tech}
               </span>
@@ -134,15 +135,15 @@ export default function Hero({ onShowFullDetails }) {
 
           <motion.dl
             variants={item}
-            className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-6"
+            className="mt-8 grid max-w-md grid-cols-3 gap-4 border-t border-line/10 pt-6"
           >
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-display text-3xl font-extrabold text-white">
+                <dd className="font-display text-3xl font-extrabold text-foreground">
                   <CountUp value={stat.value} suffix={stat.suffix} locale="en-US" />
                 </dd>
-                <dd className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-400">
+                <dd className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                   {stat.label}
                 </dd>
               </div>
