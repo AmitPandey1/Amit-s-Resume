@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
 import Reveal from './Reveal';
+import { openPrintableResume } from '../lib/printResume';
 
 const experience = [
     {
@@ -89,6 +91,14 @@ export default function ResumeSection() {
                         v1.0 shipped in 2018. Since then: continuous delivery of SDK features,
                         Play Store releases, and zero-downtime migrations across API levels.
                     </p>
+                    <button
+                        type="button"
+                        onClick={() => openPrintableResume()}
+                        className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-android/50 bg-android/10 px-5 font-display text-sm font-bold text-android transition-colors hover:bg-android hover:text-ink"
+                    >
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                        Download Resume (PDF)
+                    </button>
                 </Reveal>
 
                 <div className="mt-10">

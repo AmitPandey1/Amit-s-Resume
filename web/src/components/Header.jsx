@@ -51,14 +51,6 @@ export default function Header() {
                                 </a>
                             </li>
                         ))}
-                        <li>
-                            <a
-                                href="#contact"
-                                className="inline-flex min-h-11 items-center rounded-full bg-android px-4 font-semibold text-ink transition-opacity hover:opacity-90 sm:px-5"
-                            >
-                                Hire me
-                            </a>
-                        </li>
                     </ul>
                 </nav>
             </div>
