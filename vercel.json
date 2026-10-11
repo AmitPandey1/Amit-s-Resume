@@ -7,7 +7,10 @@
   "headers": [
     {
       "source": "/amit-pandey.vcf",
-      "headers": [{ "key": "Content-Type", "value": "text/vcard; charset=utf-8" }]
+      "headers": [
+        { "key": "Content-Type", "value": "text/vcard; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"Amit-Pandey.vcf\"" }
+      ]
     }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]

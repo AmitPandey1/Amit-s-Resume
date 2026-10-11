@@ -22,7 +22,7 @@ function ContactCard() {
             <a href={`mailto:${profile.email}`}><Mail />{profile.email}</a>
             <span><MapPin />Noida, India</span>
             <a href={profile.github} target="_blank" rel="noreferrer"><Globe />github.com/AmitPandey1</a>
-        </div><a className="card-qr" href="/amit-pandey.vcf" download><img src="/amit-pandey-qr.svg" alt="QR code to save Amit's contact" /><span>Scan to Save</span></a></div>
+        </div><a className="card-qr" href="/amit-pandey.vcf" type="text/vcard"><img src="/amit-pandey-qr.svg" alt="QR code to save Amit's contact" /><span>Scan to Save</span></a></div>
     </aside>;
 }
 function PortfolioSection({ id, title, icon: Icon, open, onToggle, children, action }) {
@@ -71,7 +71,7 @@ export default function HomePage() {
             </header>
             <div className="portfolio-hero">
                 <div className="hero-copy"><p className="hero-greeting">Hi, I’m</p><h1>Amit <span>Pandey</span></h1><p className="hero-role">Android &amp; Mobile SDK Developer</p><p className="hero-description">I build modern mobile experiences that are<br className="desktop-break" /> user-friendly, scalable and impactful.</p>
-                    <div className="hero-actions"><a className="portfolio-button" href="/amit-pandey.vcf" download><UserRoundPlus size={17} />Save to Contact</a><ResumeLink className="button-outline" /></div>
+                    <div className="hero-actions"><a className="portfolio-button" href="/amit-pandey.vcf" type="text/vcard"><UserRoundPlus size={17} />Save to Contact</a><ResumeLink className="button-outline" /></div>
                     <div className="portfolio-socials">
                         {[
                             [Linkedin, profile.linkedin, 'LinkedIn'],
