@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { ArrowRight, Atom, Blocks, ChevronDown, Code2, Coffee, Download, ExternalLink, Flame, GitBranch, Github, Globe, Linkedin, Mail, MapPin, Menu, MessageCircle, Phone, Send, Smartphone, UserRoundPlus, X, Database } from 'lucide-react';
+import { ArrowRight, Atom, Blocks, ChevronDown, Code2, Coffee, Download, Flame, GitBranch, Github, Globe, Linkedin, Mail, MapPin, Menu, MessageCircle, Phone, Send, Smartphone, UserRoundPlus, X, Database } from 'lucide-react';
 import { GraduationCap } from 'lucide-react';
 import { profile, education } from '../data/resume';
 import { workProjects, personalProjects } from '../data/projects';
 import '../portfolio.css';
+import ProjectCard from '../components/ProjectCard';
 
 const sections = [['home', 'Home'], ['about', 'About'], ['skills', 'Skills'], ['education', 'Education'], ['projects', 'Projects'], ['contact', 'Contact']];
 const technologies = [
@@ -115,7 +116,7 @@ export default function HomePage() {
                 </div>
             </PortfolioSection>
             <PortfolioSection {...sectionProps('projects')} title="Featured Projects" icon={MessageCircle} action={<button className="view-projects" onClick={() => setAllProjects(!allProjects)}>{allProjects ? 'Show Featured' : 'View All Projects'}<ArrowRight size={15} /></button>}>
-                <div className="project-grid">{projects.map((project, index) => <article key={project.index} className="portfolio-project"><div className={`project-preview preview-${index % 3}`} role="img" aria-label="Illustrative project interface preview" /><div className="project-info"><h3>{project.title}{project.playStoreUrl && <a href={project.playStoreUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on Google Play`}><ExternalLink size={14} /></a>}</h3><p>{project.description}</p><div className="project-tags">{project.tags.slice(0, 3).map(tag => <span key={tag}>{tag}</span>)}</div></div></article>)}</div>
+                <div className="project-grid">{projects.map(project => <ProjectCard key={project.index} project={project} />)}</div>
                 <button className="mobile-view-projects view-projects" onClick={() => setAllProjects(!allProjects)}>{allProjects ? 'Show Featured' : 'View All Projects'}<ArrowRight size={15} /></button>
             </PortfolioSection>
             <PortfolioSection {...sectionProps('contact')} title="Let’s Work Together" icon={MessageCircle}><div className="contact-layout"><div><p>Have a project in mind or just want to say hi? Feel free to reach out!</p><div className="contact-details"><a href={`mailto:${profile.email}`}><Mail />{profile.email}</a><a href="tel:+917379363416"><Phone />{profile.phone}</a><span><MapPin />Noida, India</span></div></div><ContactForm /></div></PortfolioSection>

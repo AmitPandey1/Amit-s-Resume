@@ -3,6 +3,11 @@
 export const workProjects = [
     {
         index: 'W.01',
+        details: [
+            "Push notifications and in-app messaging for mobile engagement.",
+            "Campaign, user and event tracking, geofencing, and deep links.",
+            "Android compatibility through API 36, ANR debugging, and SSL/TLS security.",
+        ],
         year: '2018 – Present',
         title: 'AppICE Android SDK',
         role: 'Android SDK Developer',
@@ -25,6 +30,11 @@ export const workProjects = [
     },
     {
         index: 'W.02',
+        details: [
+            "Built the JavaScript-to-native Android communication layer.",
+            "Exposed AppICE SDK features to React Native applications.",
+            "Supported callbacks and push notification integration.",
+        ],
         year: '2020 – Present',
         title: 'React Native AppICE Plugin',
         role: 'Native Android Integration',
@@ -37,6 +47,11 @@ export const workProjects = [
     },
     {
         index: 'W.03',
+        details: [
+            "Created a Java wrapper exposing AppICE to Kony / Volt MX apps.",
+            "Bridged native SDK features to the Kony JavaScript layer.",
+            "Handled notification routing and callbacks.",
+        ],
         year: '2019 – Present',
         title: 'Kony / Volt MX Wrapper',
         role: 'SDK Wrapper Engineer',
@@ -49,6 +64,11 @@ export const workProjects = [
     },
     {
         index: 'W.04',
+        details: [
+            "Built AppICE integrations for Cordova and Flutter applications.",
+            "Handled plugin setup and native-to-hybrid communication.",
+            "Supported push notification routing, deep links, and callbacks.",
+        ],
         year: '2021 – Present',
         title: 'Cordova & Flutter Plugins',
         role: 'Plugin Developer',
@@ -61,6 +81,10 @@ export const workProjects = [
     },
     {
         index: 'W.05',
+        details: [
+            "Contributed to AppICE iOS SDK development and live-events functionality.",
+            "Worked on SDK packaging and distribution using CocoaPods and podspec.",
+        ],
         year: 'Semusi',
         title: 'AppICE iOS SDK',
         role: 'iOS Contributor',
@@ -73,6 +97,10 @@ export const workProjects = [
     },
     {
         index: 'W.06',
+        details: [
+            "Contributed to real-time tracking of media application usage.",
+            "Worked on data collection and tracking for audience research and TRP-related analytics.",
+        ],
         year: 'Semusi',
         title: 'Vtion',
         role: 'Android Developer',
@@ -85,6 +113,12 @@ export const workProjects = [
     },
     {
         index: 'W.07',
+        details: [
+            "Searo: grocery application workflows.",
+            "SyncNScan: device protection and cloud backup.",
+            "QuTrust: mobile hardware and sensor diagnostics.",
+            "Contributed to Android products using REST APIs, Retrofit, and Volley.",
+        ],
         year: 'Cube Square',
         title: 'Searo / SyncNScan / QuTrust',
         role: 'Android Developer',
@@ -101,22 +135,37 @@ export const workProjects = [
 export const personalProjects = [
     {
         index: 'P.01',
-        title: 'Shree Japa App',
+        details: [
+            "Japa counting and daily chanting practice.",
+            "Scripture reading, including Bhagavad Gita, Govind Damodar Stotra, and Kunj Bihari aarti, as shown in the app screenshots.",
+            "Independently built and published on Google Play.",
+        ],
+        title: 'Shree Ji Path',
+        image: '/projects/shree-ji-path.png',
+        imageAlt: 'Shree Ji Path app screens showing daily practice, scripture reading, aarti, and a japa counter',
         platform: 'Android · Live on Play Store',
         type: 'personal',
         description:
-            'A spiritual Android app for Japa (mantra chanting) practice. Helps users track, count, and maintain their daily chanting sessions with a clean and focused interface.',
+            'A spiritual Android app for daily practice, scripture reading, aarti, and Japa (mantra chanting). Includes a chanting counter and a focused reading interface.',
         playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ap.shree.japamapp',
         tags: ['Java', 'Android', 'SQLite', 'Personal Project'],
         icon: '🕉️',
     },
     {
         index: 'P.02',
+        details: [
+            "Create HTTP requests with methods, headers, request bodies, and authentication options.",
+            "Inspect response bodies, headers, and status codes.",
+            "Compare JSON content and review request history and collections.",
+            "Independently built and published on Google Play.",
+        ],
         title: 'Reqtor',
+        image: '/projects/reqtor.png',
+        imageAlt: 'Reqtor app screens showing HTTP requests, JSON responses, JSON comparison, and response headers',
         platform: 'Android · Live on Play Store',
         type: 'personal',
         description:
-            'An Android utility app published on the Play Store. Built and published independently, demonstrating end-to-end Android app development, deployment, and Play Store distribution.',
+            'An Android API testing utility for creating HTTP requests, inspecting response bodies and headers, and comparing JSON. Built and published independently on Google Play.',
         playStoreUrl: 'https://play.google.com/store/apps/details?id=com.ap.reqtor',
         tags: ['Kotlin', 'Android', 'Play Store', 'Personal Project'],
         icon: '🔧',
