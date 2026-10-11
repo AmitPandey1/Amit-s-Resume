@@ -88,7 +88,18 @@ export default function HomePage() {
         </div>
         <main className="portfolio-paper">
             <PortfolioSection {...sectionProps('about')} title="About Me" icon={Mail}>
-                <div className="about-layout"><div><p className="about-description">I’m a passionate Android &amp; Mobile SDK Developer with a keen interest in building meaningful digital experiences. I enjoy solving problems, learning new technologies, and turning ideas into reality. The AppICE SDK I help develop is used by multiple banking apps.</p><div className="about-stats"><div><strong>{profile.yearsExperience}+</strong><span>Years Experience</span></div><div><strong>{workProjects.length + personalProjects.length}+</strong><span>Projects Delivered</span></div><div><strong>2</strong><span>Apps on Play Store</span></div></div></div><div className="about-photo" role="img" aria-label="Laptop, coffee and a notebook reading Build, Learn, Improve, Repeat" /></div>
+                <div className="about-layout">
+                    <div>
+                        <p className="about-description">I’m a passionate Android &amp; Mobile SDK Developer with a keen interest in building meaningful digital experiences. I enjoy solving problems, learning new technologies, and turning ideas into reality.</p>
+                        <div className="about-stats">
+                            <div><strong>{profile.yearsExperience}+</strong><span>Years Experience</span></div>
+                            <div><strong>{workProjects.length + personalProjects.length}+</strong><span>Projects Delivered</span></div>
+                            <div><strong>5+</strong><span>Banking Apps</span><small>Using the SDK I help develop</small></div>
+                            <div><strong>2</strong><span>Apps on Play Store</span></div>
+                        </div>
+                    </div>
+                    <div className="about-photo" role="img" aria-label="Laptop, coffee and a notebook reading Build, Learn, Improve, Repeat" />
+                </div>
             </PortfolioSection>
             <PortfolioSection {...sectionProps('skills')} title="Skills" icon={Atom}><div className="technology-grid">{technologies.map(([label, Icon, color]) => <div className="technology" key={label}><Icon size={29} color={color} strokeWidth={1.7} /><span>{label}</span></div>)}</div></PortfolioSection>
             <PortfolioSection {...sectionProps('education')} title="Education" icon={GraduationCap}>

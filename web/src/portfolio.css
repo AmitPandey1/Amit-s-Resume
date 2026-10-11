@@ -52,11 +52,11 @@ body:has(.portfolio-shell) { background: #1c2938; color: #11171b; }
 .accordion-heading { display: none; }
 .about-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
 .about-description { margin: 0; font-size: 15px; line-height: 1.5; color: #555b60; }
-.about-stats { display: flex; justify-content: space-between; margin-top: 32px; gap: 15px; }
-.about-stats > div { display: flex; flex-direction: column; border-right: 1px solid #e9e2da; padding-right: 30px; }
-.about-stats > div:last-child { padding: 0; border: 0; }
+.about-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; gap: 22px 20px; }
+.about-stats > div { display: flex; flex-direction: column; border-left: 2px solid #e9d4b9; padding-left: 14px; }
 .about-stats strong { font-size: 27px; color: #bd9463; line-height: 1.15; }
-.about-stats span { color: #5b5c60; font-size: 13px; white-space: nowrap; }
+.about-stats span { color: #5b5c60; font-size: 13px; line-height: 1.5; margin-top: 3px; }
+.about-stats small { color: #666b70; font-size: 11px; line-height: 1.5; margin-top: 2px; }
 /* Use the supplied artwork as a CSS image atlas, retaining the reference crops. */
 .about-photo { background: url('/design-reference.jpeg') 55.82% 39.67% / 391.67% auto; aspect-ratio: 312 / 178; border-radius: 16px; margin-top: -68px; align-self: start; }
 .section-skills { background: #fdfbf9; padding-top: 24px; }
@@ -112,7 +112,6 @@ body:has(.portfolio-shell) { background: #1c2938; color: #11171b; }
     .technology { padding: 13px; gap: 12px; }
     .technology-grid { gap: 14px; }
     .about-layout { gap: 30px; }
-    .about-stats > div { padding-right: 12px; }
     .about-stats span { font-size: 11px; }
 }
 @media (max-width: 767px) {
@@ -159,7 +158,10 @@ body:has(.portfolio-shell) { background: #1c2938; color: #11171b; }
     .is-open .section-content { display: block; }
     .about-layout { display: block; }
     .about-description { font-size: 14px; line-height: 1.55; }
-    .about-stats, .about-photo { display: none; }
+    .about-photo { display: none; }
+    .about-stats { margin-top: 23px; gap: 20px 12px; }
+    .about-stats > div { padding-left: 10px; }
+    .about-stats span { font-size: 12px; }
     .technology-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .technology { padding: 11px 9px; gap: 9px; font-size: 11px; }
     .technology svg { width: 24px; }
