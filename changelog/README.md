@@ -1,150 +1,17 @@
----
-description: New updates and improvements
-icon: clock-rotate-left
-layout:
-  width: wide
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: false
-  outline:
-    visible: true
-  pagination:
-    visible: false
-  metadata:
-    visible: false
-  tags:
-    visible: true
-  actions:
-    visible: true
-  anchors:
-    visible: true
----
-
 # Changelog
 
+This log records verified repository documentation changes. It does not imply a deployed release or an application version bump.
 
+## Unreleased
 
-{% updates format="full" %}
-{% update date="2025-12-03" tags="feature,improvement,fix" %}
-## Product update
+- Added project-specific Home, Documentation, API Reference and Help Center landing pages in the existing GitBook section directories.
+- Organized the development guides under the Documentation section.
+- Replaced the sample Petstore API navigation with a reference to the portfolio's real browser interfaces.
+- Added internal JavaScript contracts to the existing draft API Reference section.
+- Replaced template product announcements in the changelog navigation with this project log.
 
-See what’s new and improved in our latest update.
+## 2026-10-13
 
-<div align="left"><figure><img src="https://gitbookio.github.io/onboarding-template-images/placeholder.png" alt=""><figcaption></figcaption></figure></div>
+Commit `b18c14ff` added `.gitbook.yaml` and the initial `docs` guides covering local development, architecture, content editing, PDF generation and deployment.
 
-### Product feature
-
-* Feature description
-* Feature description
-
-### Product feature
-
-* Feature description
-* Feature description
-
-<a href="2026/product-update.md" class="button primary">Read full update</a><a href="https://gitbook.com/" class="button secondary">Documentation</a>
-
-<details>
-
-<summary>Improved</summary>
-
-* Product improvement
-* Product improvement
-* Product improvement
-* Product improvement
-* Product improvement
-
-</details>
-
-<details>
-
-<summary>Fixed</summary>
-
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-
-</details>
-{% endupdate %}
-
-{% update date="2026-05-08" tags="feature,fix" %}
-## Product update
-
-See what’s new and improved in our latest update.
-
-<div align="left"><figure><img src="https://gitbookio.github.io/onboarding-template-images/placeholder.png" alt=""><figcaption></figcaption></figure></div>
-
-### Product feature
-
-* Feature description
-* Feature description
-
-<a href="2026/product-update-1.md" class="button primary">Read full update</a><a href="https://gitbook.com/" class="button secondary">Documentation</a>
-
-<details>
-
-<summary>Fixed</summary>
-
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-
-</details>
-{% endupdate %}
-
-{% update date="2025-11-18" tags="improvement,fix" %}
-## Product update
-
-See what’s new and improved in our latest update.
-
-<a href="2025/product-update.md" class="button primary">Read full update</a><a href="https://gitbook.com/" class="button secondary">Documentation</a>
-
-<details>
-
-<summary>Improved</summary>
-
-* Product improvement
-* Product improvement
-* Product improvement
-* Product improvement
-* Product improvement
-
-</details>
-
-<details>
-
-<summary>Fixed</summary>
-
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-* Product fix
-
-</details>
-{% endupdate %}
-
-{% update date="2025-06-09" tags="feature" %}
-## Product update
-
-See what’s new and improved in our latest update.
-
-
-
-<div align="left"><figure><img src="https://gitbookio.github.io/onboarding-template-images/placeholder.png" alt=""><figcaption></figcaption></figure></div>
-
-### Product feature
-
-* Feature description
-* Feature description
-
-<a href="2025/product-update-1.md" class="button primary">Read full update</a><a href="https://gitbook.com/" class="button secondary">Documentation</a>
-{% endupdate %}
-{% endupdates %}
+When adding future entries, record the actual change and date. Add a release version only when the project has published one, and distinguish source changes from confirmed deployments.
